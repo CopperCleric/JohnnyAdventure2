@@ -55,6 +55,7 @@ public class SelectionArrow : MonoBehaviour
         SoundManager.instance.PlaySound(interactSound);
 
         //Access the button component on each option and call its function
+        //Displat the play button
         buttons[currentPosition].GetComponent<Button>().onClick.Invoke();
     }
 }
