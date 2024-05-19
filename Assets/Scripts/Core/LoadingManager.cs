@@ -26,9 +26,8 @@ public class LoadingManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+        int nextLevel = PlayerPrefs.GetInt("nextLevel", 2);
+        SceneManager.LoadScene(nextLevel);
     }
     public void Restart()
     {
