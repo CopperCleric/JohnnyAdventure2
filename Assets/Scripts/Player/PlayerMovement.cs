@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Text WinText;
+    public UIManager uiManager;
 
     [Header("Movement Parameters")]
     [SerializeField] private float speed;
@@ -143,8 +143,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.tag == "Win")
         {
-            WinText.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            uiManager.Win();
         }
     }
 }
