@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class UIManager : MonoBehaviour
     [Header("Pause")]
     [SerializeField] private GameObject pauseScreen;
 
+    [Header("Winning")]
+    [SerializeField] private GameObject winScreen;
+
     private void Awake()
     {
         gameOverScreen.SetActive(false);
         pauseScreen.SetActive(false);
+        winScreen.SetActive(false);
     }
     private void Update()
     {
@@ -75,6 +80,15 @@ public class UIManager : MonoBehaviour
     public void MusicVolume()
     {
         SoundManager.instance.ChangeMusicVolume(0.2f);
+    }
+    #endregion
+
+    #region Winning
+
+    public void Win()
+    {
+        winScreen.SetActive(true);
+        Time.timeScale = 0;
     }
     #endregion
 }
